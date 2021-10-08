@@ -73,6 +73,7 @@ class env:
     def next_line(self):
         self.mark_line()
         self.cur_line_num += 1
+        self.cur_line_step = 0
         self.cur_line_idx = self.line_idxs[self.cur_line_num]
 
 
@@ -90,7 +91,7 @@ class env:
             reward = -1
             done = 2
         else:
-            reward = 0
+            reward = 1
             done = 0
         return state, reward, done, action_mask
 
